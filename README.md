@@ -1,2 +1,3 @@
 # New_Horizons
-A project to hone skills
+A Java project using Java-Swing as the GUI
+A ticket booking system for booking interplanetary space travel
