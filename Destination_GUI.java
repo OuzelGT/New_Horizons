@@ -95,7 +95,7 @@ public class Destination_GUI extends JFrame implements ActionListener{
 		warning = new JLabel("");
 		warning.setForeground(Color.black);
 		
-		PassField = new JTextField(15);
+		PassField = new JPasswordField(15);
 		PassField.addActionListener(this);
 		PassPanel.add(bxAdmin);
 		bxAdmin.add(PassField);
@@ -170,6 +170,7 @@ public class Destination_GUI extends JFrame implements ActionListener{
 		// frame
 		setSize(700, 600);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setLocationRelativeTo(null);
 		setVisible(true);  //first screen is immediately visible
 			
 	}
@@ -267,6 +268,7 @@ public void actionPerformed(ActionEvent e)
 		{
 			LogPanel.setBackground(Color.red);
 			warning.setText("Warning: Password Incorrect!");
+			PassField.setText("");
 		}
 	}
 	

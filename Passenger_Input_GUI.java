@@ -237,6 +237,7 @@ public class Passenger_Input_GUI  extends JFrame implements ActionListener
 		
 		frame.setSize(800, 230);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setLocationRelativeTo(null);
 		frame.setVisible(false); //not immediately visible
 		
 	}

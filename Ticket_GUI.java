@@ -192,6 +192,7 @@ public class Ticket_GUI extends JFrame implements ActionListener{
 		// frame
 		setSize(700, 600);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setLocationRelativeTo(null);
 		setVisible(false);
 			
 	}

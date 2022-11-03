@@ -196,6 +196,7 @@ public Admin_GUI(){
 		cp.add(pButtons, BorderLayout.SOUTH);
 		setSize(700, 600);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setLocationRelativeTo(null);
 		setVisible(false); //this screen not immediately visible
 		
 
@@ -239,7 +240,7 @@ public void actionPerformed(ActionEvent e) {
 				"(y/n)","Confirm",JOptionPane.WARNING_MESSAGE);
 		
 		
-		if (Input.equals("y"))
+		if (Input.equals("y")|| Input.equals("Y"))
 		{
 			Passenger myPassenger = new Passenger(theFirstName, theLastName, theAge, theNationality,TheDestination,TheTickType,TheTickNum,TheTickPrice);
 			pGUI.Passenger_Store.addPassenger(myPassenger);
@@ -249,9 +250,15 @@ public void actionPerformed(ActionEvent e) {
 		model.addRow(new Object[]{theFirstName, theLastName, theAge, theNationality,TheDestination,TheTickType,TheTickNum,TheTickPrice});
 		
 		}
-		else
+		else if (Input.equals("n")|| Input.equals("N"))
+		{
 			JOptionPane.showMessageDialog(frame, "Operation Aborted", "Aborted",JOptionPane.INFORMATION_MESSAGE);
+		}
 		
+		else
+		{
+			JOptionPane.showMessageDialog(frame, "Operation Aborted", "Aborted",JOptionPane.INFORMATION_MESSAGE);
+		}
 	}
 	
 	
@@ -266,22 +273,20 @@ public void actionPerformed(ActionEvent e) {
 				String Input;
 				Input = JOptionPane.showInputDialog(null, "Are you sure you would like to remove "+Database.getSelectedRow()+"?"+"\n"+"\n" + "(y/n)","Select",JOptionPane.WARNING_MESSAGE);
 				
-				if (Input.equals("y"))
+				if (Input.equals("y")|| Input.equals("Y"))
 				{
-				
-				
 				model.removeRow(Database.getSelectedRow());
-				
-			}
-
-			
-		JOptionPane.showMessageDialog(frame, "Operation Completed", "Member Removed",JOptionPane.INFORMATION_MESSAGE);
-		
-		
+				JOptionPane.showMessageDialog(frame, "Operation Completed", "Member Removed",JOptionPane.INFORMATION_MESSAGE);
+				}
+				else if (Input.equals("n")|| Input.equals("N"))
+				{
+					JOptionPane.showMessageDialog(frame, "Operation Aborted", "Aborted",JOptionPane.INFORMATION_MESSAGE);
+				}
 		}
 		else
+		{
 			JOptionPane.showMessageDialog(frame, "Operation Aborted", "Aborted",JOptionPane.INFORMATION_MESSAGE);
-		
+		}
 	}
 	
 	
